@@ -4,13 +4,13 @@ record = require('./searchModel');
 // Import validator library
 const validator = require('validator');
 
-// handle search record actions
+// Handle search record actions
 exports.search = function (req, res) {
     var request = req.body;
     try {
-        // validating request payload params
+        // Validate request Payload
         if (validateRequest(request).code == 3) {
-            // get desired data whether if request params are valid
+            // Get Data
             getRecords(request).then(records => {
                 if (records) {
                     res.status(200).send(
