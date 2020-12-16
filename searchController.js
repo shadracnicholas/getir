@@ -49,7 +49,7 @@ exports.search = function (req, res) {
     }
 };
 
-// Validation Method
+// Validation Method to produce readable error messages
 function validateRequest(requestPayload) {
     var { startDate, endDate, minCount, maxCount } = requestPayload;
     var today = new Date().toISOString().slice(0, 10);
